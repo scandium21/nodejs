@@ -15,7 +15,8 @@ app.use("/", (req, res, next) => {
 // registers a middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(adminRoutes);
+// only routes starting with /admin will go into the adminRoutes file
+app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 
 // catch all middleware for 404
